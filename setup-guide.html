@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="iOcb96X152UDUcWdCmcO0F">
+<head data-page-node-id="lGNhZk9Og7txz1g4xXM2Nr">
+<meta charset="UTF-8" data-page-node-id="r6lJZuKzBJaoqGSbYARCCB">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="U1r3G2XfFeuvDkgAHTPkhk">
+<title>建库引导 · 60 分钟把经验变成 AI 资产</title>
+<style>
+:root{
+  --bg:#FAFAFA; --card:#FFFFFF; --text:#1D1D1F; --sub:#6E6E73; --faint:#8E8E93;
+  --line:#E8E8ED; --line2:#F0F0F4; --gold:#C9A84C; --gold-soft:#F5EFE0;
+  --code-bg:#F5F5F7; --ok:#2E7D5B; --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111113; --card:#1C1C1E; --text:#F5F5F7; --sub:#9A9AA0; --faint:#7A7A80;
+    --line:#2E2E32; --line2:#26262A; --gold:#D4B65E; --gold-soft:#3A3220;
+    --code-bg:#232326; --ok:#6FCF9C;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Helvetica Neue",sans-serif;
+  font-size:16px; line-height:1.75; letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px 120px;}
+
+/* ---------- Header ---------- */
+header{padding:96px 0 64px;}
+.eyebrow{
+  display:inline-block;font-size:13px;letter-spacing:.18em;color:var(--gold);
+  border:1px solid var(--gold);border-radius:999px;padding:4px 14px;margin-bottom:28px;
+}
+h1{font-size:44px;line-height:1.25;font-weight:600;letter-spacing:-.01em;margin-bottom:20px;}
+h1 em{font-style:normal;color:var(--gold);}
+.lede{font-size:19px;color:var(--sub);line-height:1.8;max-width:640px;}
+
+/* ---------- Why ---------- */
+.why{
+  border-left:2px solid var(--gold);padding:4px 0 4px 24px;margin:48px 0 8px;
+  display:grid;gap:18px;
+}
+.why p{font-size:17px;color:var(--sub);}
+.why strong{color:var(--text);font-weight:600;}
+
+/* ---------- Section ---------- */
+section{padding-top:88px;}
+.sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;}
+.secnum{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.1em;}
+h2{font-size:28px;font-weight:600;letter-spacing:-.01em;}
+.secsub{color:var(--sub);font-size:15px;margin-bottom:32px;}
+
+/* ---------- Route map ---------- */
+.mapwrap{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 8px 4px;margin-bottom:8px;
+}
+.mapwrap svg{width:100%;height:auto;display:block;}
+.station{cursor:pointer;}
+.station circle.dot{transition:all .2s ease;}
+.station:hover circle.dot{fill:var(--gold);}
+.station:hover text.num{fill:#fff;}
+.station:hover text.lbl{fill:var(--text);}
+.maptip{text-align:center;font-size:12.5px;color:var(--faint);padding-bottom:10px;}
+
+/* ---------- Steps ---------- */
+.step{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 32px;margin-bottom:16px;
+}
+.stephead{display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;}
+.badge{
+  width:28px;height:28px;flex:none;border-radius:50%;background:var(--gold-soft);color:var(--gold);
+  font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;
+}
+h3{font-size:19px;font-weight:600;letter-spacing:-.005em;}
+.chip{
+  font-size:12px;color:var(--faint);border:1px solid var(--line);
+  border-radius:999px;padding:2px 10px;
+}
+.step p{color:var(--sub);font-size:15.5px;margin-bottom:14px;}
+.step p:last-child{margin-bottom:0;}
+.step b{color:var(--text);font-weight:600;}
+ul.clean{list-style:none;display:grid;gap:10px;margin:14px 0;}
+ul.clean li{
+  color:var(--sub);font-size:15.5px;padding-left:20px;position:relative;
+}
+ul.clean li::before{
+  content:"";position:absolute;left:2px;top:12px;width:5px;height:5px;
+  border-radius:50%;background:var(--gold);
+}
+ul.clean li b{color:var(--text);}
+
+/* ---------- Window diagram ---------- */
+.diagram{
+  background:var(--code-bg);border-radius:12px;padding:18px 12px;margin:18px 0;
+}
+.diagram svg{width:100%;height:auto;display:block;}
+
+/* ---------- Copy block ---------- */
+details{
+  border:1px solid var(--line);border-radius:12px;margin:14px 0;background:var(--card);overflow:hidden;
+}
+details[open]{border-color:var(--gold);}
+summary{
+  cursor:pointer;list-style:none;padding:14px 18px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px;font-size:15px;font-weight:500;
+  background:var(--code-bg);user-select:none;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"＋";color:var(--faint);font-size:17px;font-weight:400;flex:none;}
+details[open] summary::after{content:"－";}
+.promptbox{
+  padding:18px;border-top:1px solid var(--line);
+}
+.promptbox pre{
+  font-family:"SF Mono",ui-monospace,"PingFang SC",Menlo,monospace;
+  font-size:13px;line-height:1.75;color:var(--sub);white-space:pre-wrap;
+  word-break:break-word;max-height:340px;overflow:auto;
+  background:var(--code-bg);border-radius:8px;padding:16px;
+}
+.copyrow{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap;}
+button.copy{
+  border:none;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:500;
+  background:var(--gold);color:#fff;padding:10px 22px;border-radius:999px;
+  transition:transform .12s ease,opacity .2s ease;
+}
+button.copy:hover{opacity:.88;}
+button.copy:active{transform:scale(.97);}
+button.copy.done{background:var(--ok);}
+.copynote{font-size:13px;color:var(--faint);}
+
+/* ---------- Table ---------- */
+table{width:100%;border-collapse:collapse;font-size:15px;margin-top:8px;}
+th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line2);vertical-align:top;}
+th{font-size:13px;color:var(--faint);font-weight:500;letter-spacing:.05em;}
+td:first-child{color:var(--gold);font-weight:600;width:36px;}
+td{color:var(--sub);}
+td b{color:var(--text);}
+
+/* ---------- Pitfalls ---------- */
+.pit{border-top:1px solid var(--line2);padding:22px 0;}
+.pit:first-of-type{border-top:none;}
+.pit h4{font-size:15.5px;font-weight:600;margin-bottom:8px;display:flex;gap:10px;align-items:baseline;}
+.pit h4 span{color:var(--gold);font-size:13px;font-weight:600;flex:none;}
+.pit p{color:var(--sub);font-size:15px;padding-left:26px;}
+
+/* ---------- Callout ---------- */
+.callout{
+  border:1px solid var(--line);border-left:2px solid var(--gold);
+  border-radius:8px;padding:16px 20px;margin:18px 0;background:var(--card);
+  font-size:15px;color:var(--sub);
+}
+.callout b{color:var(--text);}
+
+/* ---------- Folder tree ---------- */
+.tree{
+  font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:13.5px;line-height:2;
+  background:var(--code-bg);border-radius:12px;padding:20px 22px;color:var(--sub);
+  overflow-x:auto;
+}
+.tree .k{color:var(--gold);}
+
+footer{
+  margin-top:96px;padding-top:36px;border-top:1px solid var(--line);
+  text-align:center;color:var(--faint);font-size:13.5px;line-height:2;
+}
+
+@media (max-width:640px){
+  .wrap{padding:0 20px 80px;}
+  header{padding:64px 0 40px;}
+  h1{font-size:32px;}
+  .lede{font-size:17px;}
+  h2{font-size:23px;}
+  .step{padding:24px 20px;}
+}
+</style>
+</head>
+<body data-page-node-id="0zCId4t3KLLG6dyb0DZri5">
+<div class="wrap" data-page-node-id="zpIdby3NvuwHzd2Ye7Vdtu">
+
+<header data-page-node-id="BMZOBMy55Jdyhwpm005AFZ">
+  <span class="eyebrow" data-page-node-id="rIhdwwIhLatrWYFKVwdVnV">0 号前置 · 建库引导</span>
+  <h1 data-page-node-id="FglCy2OFCh5GjYlIwQi0r8">60 分钟，<br data-page-node-id="NXsvgFk080kDGCyWFshg0F">把你的经验变成 <em data-page-node-id="U8aJepNB5AoqvV8oPaeKtk">AI 能用的资产</em></h1>
+  <p class="lede" data-page-node-id="kGDXwns0hWukTFu4AMTSHC">你不需要写一个字。AI 问，你说——像跟朋友聊天一样，攒出 30 张只属于你的知识卡片。</p>
+</header>
+
+<div class="why" data-page-node-id="KhcB2lranE0AmimI0QTWPG">
+  <p data-page-node-id="f0TQC0YOwIXpsBneUYFH8V">后面那套口播稿系统，本质是一台<strong data-page-node-id="tB7xMACtXZLILkJ8FnKhi2">加工机</strong>：它负责找热点、搭结构、配图、查事实、排版交付。</p>
+  <p data-page-node-id="kJe0EMmsdEMd1IynF2RLRE">但它<strong data-page-node-id="Uh1VQyK0vSRvlQrvYpk2DX">不知道你是谁</strong>、你做过什么、你信什么。空着库去用它，出来的稿子<strong data-page-node-id="R7qdFOLuuKKIpMVXbyfMPg">谁都能写</strong>——没有你的味道，没有你的资格，没有你的客户想听的话。</p>
+  <p data-page-node-id="ueOs6U8r6KsLQgTRFNsdik"><strong data-page-node-id="eyswrIDA9yuGnwWNu3ut5i">这一步，就是给加工机喂料。料不好，机器再好也白搭。</strong></p>
+</div>
+
+<!-- ============ 价值四件套 ============ -->
+<section id="value">
+  <div class="sechead"><span class="secnum">产出</span><h2>库建好以后，每次出稿你会拿到四件东西</h2></div>
+  <p class="secsub">先看清楚这四件里——哪些系统能自己干，哪些只能靠你。你就明白为什么要先花 60 分钟建库。</p>
+
+  <div class="mapwrap">
+    <svg viewBox="0 0 760 262" role="img" aria-label="口播稿四件套构成图">
+      <defs>
+        <marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,1 L9,5 L0,9" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        </marker>
+      </defs>
+
+      <!-- 卡片 1 热点 -->
+      <rect x="8" y="12" width="176" height="100" rx="12" fill="none" stroke="var(--line)" stroke-width="2"/>
+      <circle cx="32" cy="40" r="11" fill="none" stroke="var(--gold)" stroke-width="2"/>
+      <text x="32" y="45" text-anchor="middle" font-size="12" font-weight="600" fill="var(--gold)">1</text>
+      <text x="52" y="45" font-size="13.5" font-weight="600" fill="var(--text)">热点</text>
+      <text x="24" y="76" font-size="11.5" fill="var(--sub)">你行业里的热点 / 爆款</text>
+      <text x="24" y="96" font-size="11.5" fill="var(--faint)">不是全网热搜，只挑相关的</text>
+
+      <!-- 卡片 2 事件 -->
+      <rect x="196" y="12" width="176" height="100" rx="12" fill="none" stroke="var(--line)" stroke-width="2"/>
+      <circle cx="220" cy="40" r="11" fill="none" stroke="var(--gold)" stroke-width="2"/>
+      <text x="220" y="45" text-anchor="middle" font-size="12" font-weight="600" fill="var(--gold)">2</text>
+      <text x="240" y="45" font-size="13.5" font-weight="600" fill="var(--text)">事件</text>
+      <text x="212" y="76" font-size="11.5" fill="var(--sub)">事实索引 + 真实配图</text>
+      <text x="212" y="96" font-size="11.5" fill="var(--faint)">每条都能核到出处</text>
+
+      <!-- 卡片 3 知识点 -->
+      <rect x="384" y="12" width="176" height="100" rx="12" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+      <circle cx="408" cy="40" r="11" fill="var(--gold)" stroke-width="2"/>
+      <text x="408" y="45" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">3</text>
+      <text x="428" y="45" font-size="13.5" font-weight="600" fill="var(--text)">知识点</text>
+      <text x="400" y="76" font-size="11.5" fill="var(--sub)">从你库里抽的观点</text>
+      <text x="400" y="96" font-size="11.5" fill="var(--faint)">你自己的方法论</text>
+
+      <!-- 卡片 4 核心价值点 -->
+      <rect x="572" y="12" width="176" height="100" rx="12" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+      <circle cx="596" cy="40" r="11" fill="var(--gold)" stroke-width="2"/>
+      <text x="596" y="45" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">4</text>
+      <text x="616" y="45" font-size="13.5" font-weight="600" fill="var(--text)">核心价值点</text>
+      <text x="588" y="76" font-size="11.5" fill="var(--sub)">一张思维导图</text>
+      <text x="588" y="96" font-size="11.5" fill="var(--faint)">方形图，放视频中间</text>
+
+      <!-- 汇聚 -->
+      <path d="M96,112 V148" stroke="var(--line)" stroke-width="2"/>
+      <path d="M284,112 V148" stroke="var(--line)" stroke-width="2"/>
+      <path d="M472,112 V148" stroke="var(--line)" stroke-width="2"/>
+      <path d="M660,112 V148" stroke="var(--line)" stroke-width="2"/>
+      <path d="M96,148 H660" stroke="var(--line)" stroke-width="2"/>
+      <path d="M380,148 V186" stroke="var(--gold)" stroke-width="2.5" marker-end="url(#ar2)"/>
+
+      <!-- 结果 -->
+      <rect x="222" y="192" width="316" height="52" rx="26" fill="var(--gold)"/>
+      <text x="380" y="224" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">一条能直接拍的口播稿</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>四件套</th><th>谁出</th><th>说明</th></tr>
+    <tr><td>1 热点</td><td>系统自动</td><td>按<b>你的行业</b>定制热点边界，不是全网热搜：系统从你库里读出你做什么行业、你的观众是谁，自动圈出该跟哪几类、哪些不碰</td></tr>
+    <tr><td>2 事件</td><td>系统自动</td><td>挖事实细节、找事件真实图、每条附来源链接；找不到真图就用净化文字截图兜底</td></tr>
+    <tr><td><b>3 知识点</b></td><td><b>你的知识库</b></td><td><b>只能从你建的卡片里抽。库是空的，这块就是空的</b></td></tr>
+    <tr><td><b>4 核心价值点</b></td><td><b>你的知识库</b></td><td><b>思维导图里写什么，来自你的观点和经历，系统凭空造不出来</b></td></tr>
+  </table>
+
+  <div class="callout"><b>热点人人都能追，事件 AI 能自己找。</b><br>
+    但「知识点」和「核心价值点」这后两件，<b>只有你自己有</b>——系统凭空造出来的，就是谁都能写的通用货。<br>
+    所以这 60 分钟不是在"填资料"，是在<b>给四件套里最值钱的两件备货</b>。</div>
+</section>
+
+<!-- ============ 路线图 ============ -->
+<section id="map" data-page-node-id="E1mhEJCIVnKEyEmHFt2kwS">
+  <div class="sechead" data-page-node-id="IJqSN0yED6zMPwodgtKpp7"><span class="secnum" data-page-node-id="AovDWH7QgytqBd48cs6G1L">路线</span><h2 data-page-node-id="FU4dD7b87Ck5OmHw0EQN8f">你要走的 8 站</h2></div>
+  <p class="secsub" data-page-node-id="5Ymm3bUJR7CDA3CQh1wZZW">全程约 70 分钟，可以分几天做。点任意一站跳到详细说明。</p>
+
+  <div class="mapwrap" data-page-node-id="VzuCH8Tt8oGjboFWQTfM7W">
+    <svg viewBox="0 0 760 330" role="img" aria-label="建库流程路线图" data-page-node-id="3uKL1BYa0EMZVeI8Fo8BaN">
+      <defs data-page-node-id="GBFvTKm5dFnkP5JjxPdiuZ">
+        <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto" data-page-node-id="R2uRYdjwAaqoIBzvP8HkmR">
+          <path d="M0,1 L9,5 L0,9" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" data-page-node-id="7DYj2GcOninaCoj2NlJwsK"/>
+        </marker>
+      </defs>
+
+      <!-- 线路 -->
+      <path d="M90,88 H670 A85,85 0 0 1 670,258 H90"
+            fill="none" stroke="var(--line)" stroke-width="4" stroke-linecap="round" data-page-node-id="hG2C9SyLOJ6uWJboN377cg"/>
+
+      <!-- 站 1 -->
+      <g class="station" onclick="go('s1')" data-page-node-id="PsbdCYXPQykd0bae0BBTTr">
+        <circle class="dot" cx="90" cy="88" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="3CjGTRxAuWCaSHbQ76WJDA"/>
+        <text class="num" x="90" y="94" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="mMUOpgi30yX4zoZPNHft8E">1</text>
+        <text class="lbl" x="90" y="140" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="vbDbVKK9c5BM8WshxvvS1z">装 WorkBuddy</text>
+        <text x="90" y="160" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="njbRNNxNQuGLNeJRrWzbEg">3 分钟</text>
+      </g>
+      <!-- 站 2 -->
+      <g class="station" onclick="go('s2')" data-page-node-id="ehTKW6vqXpqWr7Rt8TNfQd">
+        <circle class="dot" cx="285" cy="88" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="cGMqDNrSCwJLDkYbKeGemL"/>
+        <text class="num" x="285" y="94" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="kmuqD5Ep2wijbka2CO3TLv">2</text>
+        <text class="lbl" x="285" y="140" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="tDlaHOa3SeMKDFs8EeRC1P">认三个地方</text>
+        <text x="285" y="160" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="jmxFw5RgAvUJweFcF5XFec">2 分钟</text>
+      </g>
+      <!-- 站 3 -->
+      <g class="station" onclick="go('s3')" data-page-node-id="fvrLCIYvY6Cv6fbvhJt1Fr">
+        <circle class="dot" cx="480" cy="88" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="Kwbn3GEzrJxyLCMYS5AzyG"/>
+        <text class="num" x="480" y="94" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="jU9K6KWqQJSgLcBcljVTIe">3</text>
+        <text class="lbl" x="480" y="140" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="L6zuvNMd862RAA0DGFCqSW">阶段 0 · 打地基</text>
+        <text x="480" y="160" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="qXSxM6bVEKcHdM5vDJxfI0">5 分钟</text>
+      </g>
+      <!-- 站 4 -->
+      <g class="station" onclick="go('s4')" data-page-node-id="KrxPOLID0eZH72Ekdg6PNk">
+        <circle class="dot" cx="670" cy="88" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="mQpFejNsoxDVELZLlztqPg"/>
+        <text class="num" x="670" y="94" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="w5EKeS0XVeJWQZ9ZY4JU53">4</text>
+        <text class="lbl" x="670" y="140" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="3EZ7xV8wCTm4nbCyvcYvC6">挖 30 张卡</text>
+        <text x="670" y="160" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="qEZyNs9qeZ5qitHi8yeDCy">55 分钟</text>
+      </g>
+      <!-- 站 5 -->
+      <g class="station" onclick="go('s5')" data-page-node-id="Wc9nXJJcg6cEVcoXjQPyD5">
+        <circle class="dot" cx="670" cy="258" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="GokrVgIBpBOCBEunyWZEJt"/>
+        <text class="num" x="670" y="264" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="RY2rhKUbIdKvqn3RZ7DBZ7">5</text>
+        <text class="lbl" x="670" y="228" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="XJDIkf5kRVXJFhIwZQ9dID">验收 + 建索引</text>
+        <text x="670" y="208" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="Mzvjh6gfxgP1xoGIgYVFsP">5 分钟</text>
+      </g>
+      <!-- 站 6 -->
+      <g class="station" onclick="go('s6')" data-page-node-id="txvKRrKThfRsAXeeIWDTsG">
+        <circle class="dot" cx="480" cy="258" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="9mLtxn48UWt4RknMtQK7HS"/>
+        <text class="num" x="480" y="264" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="hEMezosUpz8twg9jNLFn2a">6</text>
+        <text class="lbl" x="480" y="228" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="M3ndfajRDfFWRH9Yfsqy3k">装系统</text>
+        <text x="480" y="208" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="nKxNslqA6R7su6xUuc8C0B">1 分钟</text>
+      </g>
+      <!-- 站 7 -->
+      <g class="station" onclick="go('s7')" data-page-node-id="3Vo1RC3YnVrJSErfhFMSTL">
+        <circle class="dot" cx="285" cy="258" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="2hdZD6GFCtZ0xzrUrM7DdL"/>
+        <text class="num" x="285" y="264" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="s3Jwb8o4jx52igoM1UUB1S">7</text>
+        <text class="lbl" x="285" y="228" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="yYVIj0DSxpeFCSQPEpv9Of">跑第一条稿</text>
+        <text x="285" y="208" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="mlq7ELGqJSi99lvio8l9Bb">2 分钟</text>
+      </g>
+      <!-- 站 8 -->
+      <g class="station" onclick="go('s8')" data-page-node-id="PeaudQ8SvzPxh9dVYWSxTR">
+        <circle class="dot" cx="90" cy="258" r="21" fill="var(--card)" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="Qv77X2H6x2mLcPuGF29otg"/>
+        <text class="num" x="90" y="264" text-anchor="middle" font-size="15" font-weight="600" fill="var(--gold)" data-page-node-id="2W3lBIJGcfLGfLNSDJ7yht">8</text>
+        <text class="lbl" x="90" y="228" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)" data-page-node-id="Wua6QTTPqcRIZ4e5RWlOrt">越用越值钱</text>
+        <text x="90" y="208" text-anchor="middle" font-size="11.5" fill="var(--faint)" data-page-node-id="AWy76pCq1PEEsK7tt18fRb">长期</text>
+      </g>
+
+      <!-- 终点 -->
+      <path d="M90,258 H48" stroke="var(--gold)" stroke-width="3" stroke-linecap="round" marker-end="url(#ar)" data-page-node-id="qCm2GxueeZKyDfWzxoZR09"/>
+      <text x="44" y="300" text-anchor="start" font-size="12" fill="var(--gold)" font-weight="600" data-page-node-id="T2Gvu6nQIMY43p0wAmRam1">能持续出稿的系统</text>
+    </svg>
+  </div>
+  <p class="maptip" data-page-node-id="uVjXXCgDApt0Pgr6TpsdiO">点圆圈跳到该站说明</p>
+</section>
+
+<!-- ============ 站点详解 ============ -->
+<section id="steps" data-page-node-id="PNX5qMEf2x0guBcBrbxCN5">
+  <div class="sechead" data-page-node-id="GSDkH3eProlnYqzPIC4ZD4"><span class="secnum" data-page-node-id="rQCxBL1BJ1NXEDjhca7icN">详解</span><h2 data-page-node-id="dUhupmIKL2NVB3e3Gme9Yc">一站一站走</h2></div>
+  <p class="secsub" data-page-node-id="InPGWsxdNjcDSgxa2lErY0">每一站需要你复制的地方，都配好了「一键复制」按钮——点一下，直接粘进 WorkBuddy 的输入框。</p>
+
+  <!-- 站 1 -->
+  <div class="step" id="s1" data-page-node-id="yaSXStaReoN8cFfENGQAkJ">
+    <div class="stephead" data-page-node-id="opwSaQWKC9XKZQcyQtAFAS"><span class="badge" data-page-node-id="NI6vBq3IcLiQGftCsmzzlH">1</span><h3 data-page-node-id="EnsHbSlwHQjG0InFODECT7">下载安装 WorkBuddy</h3><span class="chip" data-page-node-id="g1sjmcEQMRvGB7UwcrRONC">3 分钟</span></div>
+    <p data-page-node-id="9Lj5lejlpukhVe6reBwSwK">浏览器搜索 <b data-page-node-id="IT0P60HYvnB6G2uxUn55Ag">WorkBuddy</b>，进官网下载（腾讯出品，免费）。装好打开，是一个干净的对话框。</p>
+    <div class="callout" data-page-node-id="oH0nPXfTguwuoUxb3ZShF7"><b data-page-node-id="Rlmou3gKQni1pHGPFKNVUR">为什么非得用它、不能用网页版 AI？</b><br data-page-node-id="LGGkuO1GPfC0fnm8ASXZxW">
+      建完库你还得装系统、跑第一条稿。网页版里建完库，要手动把 30 张卡一张张复制出来存文件，再换应用装系统——<b data-page-node-id="ak8GA12CObX3UZbC36r5xO">中间断两次，八成人死在这</b>。WorkBuddy 装在电脑上，能直接帮你建文件夹、写文件、装技能，一口气跑完。</div>
+  </div>
+
+  <!-- 站 2 -->
+  <div class="step" id="s2" data-page-node-id="Yrcbr1bLQL7ELkpukNOupj">
+    <div class="stephead" data-page-node-id="GAaEaRNc4cQHRpWDLBC1Xt"><span class="badge" data-page-node-id="s2W6nHfeBNT1rEPZUHypbA">2</span><h3 data-page-node-id="Wma8RGMZJvMxqqQNbLFbt5">先认三个地方</h3><span class="chip" data-page-node-id="j6Pi8AnDQTIiEuzhTZNWw0">2 分钟</span></div>
+    <p data-page-node-id="eKWaBwJ3p80RZqD0ORulNz">整个界面你只需要记住 3 块，其他都不用管：</p>
+    <div class="diagram" data-page-node-id="1jcAUyYfDL77o91SBZU1fi">
+      <svg viewBox="0 0 620 300" role="img" aria-label="WorkBuddy 界面三个关键区域示意图" data-page-node-id="fem0ymXn99cQBZ8TibByKg">
+        <!-- 窗口外框 -->
+        <rect x="8" y="8" width="604" height="284" rx="14" fill="none" stroke="var(--line)" stroke-width="2" data-page-node-id="mCD5sqMsFuM6pm9p4I0Gz8"/>
+        <!-- 顶栏 -->
+        <line x1="8" y1="52" x2="612" y2="52" stroke="var(--line)" stroke-width="2" data-page-node-id="dgMMNHjO3ivpdHcQg0zILi"/>
+        <circle cx="32" cy="30" r="5" fill="var(--line)" data-page-node-id="BqS8duOvRkQ8WqpjGWYPMj"/>
+        <circle cx="50" cy="30" r="5" fill="var(--line)" data-page-node-id="P45WgB00IppBZ3YxexygNU"/>
+        <circle cx="68" cy="30" r="5" fill="var(--line)" data-page-node-id="tCwdi6zskbiozBaOopuYEP"/>
+        <!-- ③ 新建任务 -->
+        <rect x="470" y="18" width="118" height="26" rx="13" fill="none" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="sFZcACLW1xHwe2NvlVcNsf"/>
+        <text x="529" y="35" text-anchor="middle" font-size="12.5" fill="var(--gold)" font-weight="600" data-page-node-id="noIDTrC9cT6xISGQ5CECIb">＋ 新建任务</text>
+        <!-- 侧栏 -->
+        <line x1="176" y1="52" x2="176" y2="292" stroke="var(--line)" stroke-width="2" data-page-node-id="U3y3qxSAvAyCLidLaGqlpX"/>
+        <!-- ① 资料库 -->
+        <rect x="24" y="92" width="128" height="34" rx="8" fill="none" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="e7wkyCeEoKQxJCKnY4LWVc"/>
+        <text x="88" y="114" text-anchor="middle" font-size="13" fill="var(--gold)" font-weight="600" data-page-node-id="5n8edeYQ9YhwI8fFBTNCuT">① 资料库</text>
+        <text x="88" y="146" text-anchor="middle" font-size="11" fill="var(--faint)" data-page-node-id="TTvopFYBeSJQ9rZimpCUDc">你的卡片都存这儿</text>
+        <!-- 侧栏其它条目（示意） -->
+        <rect x="24" y="176" width="90" height="12" rx="6" fill="var(--line)" data-page-node-id="RzTApxEHBazaGQ6oQxKE3N"/>
+        <rect x="24" y="204" width="70" height="12" rx="6" fill="var(--line)" data-page-node-id="u5edUTkw42ihmraW3Wd3j1"/>
+        <rect x="24" y="232" width="100" height="12" rx="6" fill="var(--line)" data-page-node-id="D7YdPdxFyzywKl7lowXzIL"/>
+        <!-- 主区 -->
+        <rect x="204" y="80" width="180" height="12" rx="6" fill="var(--line)" data-page-node-id="Yg5XRD6qM8JlItm9ZFmx5v"/>
+        <rect x="204" y="106" width="380" height="12" rx="6" fill="var(--line)" data-page-node-id="EaCw7HVbxN9Pzm2tuzcitm"/>
+        <rect x="204" y="132" width="300" height="12" rx="6" fill="var(--line)" data-page-node-id="ExCAZAuW6eJmKiakpmN8kT"/>
+        <!-- ② 输入框 -->
+        <rect x="204" y="212" width="380" height="52" rx="12" fill="none" stroke="var(--gold)" stroke-width="2.5" data-page-node-id="LZrNAk9LnQubC98wr3OMUI"/>
+        <text x="228" y="243" font-size="12.5" fill="var(--faint)" data-page-node-id="JkmS8VjhRYIzhcIKRtdwAY">② 提示词粘这里，按回车发送</text>
+        <!-- 指引线 -->
+        <path d="M152,109 H176" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="3 3" data-page-node-id="BEJ5R4XC0Ka2di8oy3McmN"/>
+      </svg>
+    </div>
+    <ul class="clean" data-page-node-id="hGpJ7AD6x2wbF6RscOU0as">
+      <li data-page-node-id="YqJMn0LWHcCHGF8qU1pYjv"><b data-page-node-id="bpuWtdButjdYCLRyzgdfXb">① 左侧「资料库」</b>——你建的卡片都存这儿，系统每次写稿都来这儿翻</li>
+      <li data-page-node-id="S9mnXETH1woZySUTLnQKZH"><b data-page-node-id="sMLZFO13YEpbJ4jFUrI1o5">② 底部输入框</b>——提示词粘进来，按回车发送</li>
+      <li data-page-node-id="4gubjlN4B5XZnKpWh962Ti"><b data-page-node-id="uEDwY1lU4CWip9jqvhCs4x">③ 顶部「＋ 新建任务」</b>——开始一段新对话</li>
+    </ul>
+  </div>
+
+  <!-- 站 3 -->
+  <div class="step" id="s3" data-page-node-id="SmotMGtgwVSGO1KXHwpLyB">
+    <div class="stephead" data-page-node-id="VqNu0BcWbmAn4o1uRrsdx3"><span class="badge" data-page-node-id="HqOQ54tAYKHC48x1Iay8QG">3</span><h3 data-page-node-id="evXcqj3XZAFVpPQGFgTWw5">阶段 0 · 打地基</h3><span class="chip" data-page-node-id="OtMbeOXZ6nyDw6AAYDWJ50">5 分钟 · 产出 1 张卡</span></div>
+    <p data-page-node-id="pYx4HprGWNfZshzK0Cdr7h">复制下面这段，粘进输入框，按回车。</p>
+    <p data-page-node-id="PwnNIpkKEEiGTwURGQVv9L"><b data-page-node-id="sd8dVYaf74eDS3dxkMyFu5">粘进去以后会这样</b>：它先问你「知识库放哪儿」→ 你随便定一个（说「桌面 / 我的知识库」，或直接说「你帮我选」）→ 然后问你 3 个问题 → 你回答 → 它整理成卡片给你确认 → <b data-page-node-id="KpYTEeieLqHhBn2qzPp130">确认了立刻存成文件</b>，告诉你「已保存：xxx.md」。</p>
+    <details data-page-node-id="vib9nXcGKNnb1PY1kx2WuT">
+      <summary data-page-node-id="Y1EvOITVeBeXQjM8XKpkEK">阶段 0 提示词 · 我是谁</summary>
+      <div class="promptbox" data-page-node-id="086ldOA6sT5A9PUmxI0VS6">
+        <pre id="p0" data-page-node-id="1FA9nGtXbunF1PIlW8FA2H"></pre>
+        <div class="copyrow" data-page-node-id="SwMT9lnJIwbfwGOCmj2HBv">
+          <button class="copy" data-copy="p0" data-page-node-id="KyJXMfG0ZPKEMwNOC8HriD">一键复制</button>
+          <span class="copynote" data-page-node-id="HWeAbDX93lbLp3gvTkfIuG">复制后粘进 WorkBuddy 输入框，按回车</span>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- 站 4 -->
+  <div class="step" id="s4" data-page-node-id="UtCZpBSxZIOzeUTjsdCzaE">
+    <div class="stephead" data-page-node-id="3jBodyfHZVnqI2BWONwpdF"><span class="badge" data-page-node-id="P3eeF8fAZYhpgHFuGbBLst">4</span><h3 data-page-node-id="XqaRCWu2T4yVzZ5HwWaAOV">阶段 1-4 · 挖出 30 张卡</h3><span class="chip" data-page-node-id="YkLOuPBM8CuPUZ6G36FMof">55 分钟 · 产出约 30 张</span></div>
+    <p data-page-node-id="nwvJDmZKEuJHMD02sa5X0f">阶段 0 跑完后，<b data-page-node-id="TAy6EYIC7Crf3zCLOBaSq5">在同一个对话里</b>按顺序继续粘下面 4 段。一段跑完再粘下一段，别一次全粘。</p>
+    <div class="callout" data-page-node-id="zBzxtoIpLKAwINcm1n89a2"><b data-page-node-id="YI6tdTOXKrgHvySXhqAKAm">三条铁律</b>：<br data-page-node-id="AG8GQW3zZXuYs7a3DV2x1e">
+      ① <b data-page-node-id="GF6hMo16IFHAYRWTfhCXOs">用语音回答，别打字</b>——手机微信语音转文字、或电脑自带语音输入都行，说完粘过来。打字会让你想太多，反而说不出干货。<br data-page-node-id="6b4tGjsQWI6BfwCyHNqUL2">
+      ② <b data-page-node-id="qxoGrrfowhehmmMIV4eDLG">一次只答 3 个问题</b>——它问 3 个，你答完，它整理成卡给你确认，确认了再进下一轮。<br data-page-node-id="Ew9Ohd4yowHsbj3iPRJJvC">
+      ③ <b data-page-node-id="7pHDZcWf7k3uKmsdcaHBKQ">卡片会自动存成文件</b>——你说完它直接在电脑上建文件夹、写成 .md 文件，你什么都不用管。<br>
+      ④ <b>观点卡多写一行「可视化」</b>——每讲完一个观点，顺口补一句「这个要是画成一张图，该有哪几个关键词」，系统出稿时就照这个画思维导图。<b>不说这句，图就是空的。</b></div>
+
+    <details data-page-node-id="dpoNNKPOqcTaYyN4UxbnPJ">
+      <summary data-page-node-id="0DHZ0L0NggXcETnell3sBv">阶段 1 提示词 · 挖经历（8-12 张）</summary>
+      <div class="promptbox" data-page-node-id="F6K1jd8C5OO89TcBlGGKkU">
+        <pre id="p1" data-page-node-id="X28zjs8Tw70ZlfJk6u45M1"></pre>
+        <div class="copyrow" data-page-node-id="JJEBP4W3RBIZGcX5dqGAhZ"><button class="copy" data-copy="p1" data-page-node-id="tKaXT4MaL6tkNsR8lqoXcc">一键复制</button><span class="copynote" data-page-node-id="Fq28myt3ZfV6nLekzmctQB">阶段 0 完成后再粘</span></div>
+      </div>
+    </details>
+    <details data-page-node-id="JUBFioV6HAaMvHwHZd4l0r">
+      <summary data-page-node-id="OeMPyM3mfWMd0R1OnQ0EO6">阶段 2 提示词 · 挖观点（8-12 张）</summary>
+      <div class="promptbox" data-page-node-id="BeIxZgHaZPw1QyVP27CFOm">
+        <pre id="p2" data-page-node-id="pxlT2Z713s9ajXMjZIMhdf"></pre>
+        <div class="copyrow" data-page-node-id="y1LDTRckGtVeCE9Zq6X1v2"><button class="copy" data-copy="p2" data-page-node-id="2aA3b1BHASnODXnlYAH5wa">一键复制</button><span class="copynote" data-page-node-id="OPLvSDlhjaEHET82VtFtI6">阶段 1 完成后再粘</span></div>
+      </div>
+    </details>
+    <details data-page-node-id="NKGN35KNnUQFHNoySvAx6F">
+      <summary data-page-node-id="Gm1E5Gmn0aFpI4DBTw4SzM">阶段 3 提示词 · 挖证据（6-10 张）</summary>
+      <div class="promptbox" data-page-node-id="zKrx0w0oCGKrpNdeXMnckR">
+        <pre id="p3" data-page-node-id="sldH0Q8YS0enHoBYmxgZJB"></pre>
+        <div class="copyrow" data-page-node-id="czgfWu29EVM91P79FTkECd"><button class="copy" data-copy="p3" data-page-node-id="b8J8hlUgkKQPjYuB5YLvTr">一键复制</button><span class="copynote" data-page-node-id="PL91okMH50zGbN0MUnxhWG">阶段 2 完成后再粘</span></div>
+      </div>
+    </details>
+    <details data-page-node-id="erdMa3tMtSCiNnuAWoxjbx">
+      <summary data-page-node-id="W33rEjSS4I7H8VHvADAXmY">阶段 4 提示词 · 挖客户（4-6 张）</summary>
+      <div class="promptbox" data-page-node-id="uF4pWHjGG31DJCWOSEyZd6">
+        <pre id="p4" data-page-node-id="mlpqpK1ASNoW4l9FWodRkP"></pre>
+        <div class="copyrow" data-page-node-id="WjJ2eHWpzkck8ep7xoeemE"><button class="copy" data-copy="p4" data-page-node-id="hK0jg4M60sZFt4j8J5Er96">一键复制</button><span class="copynote" data-page-node-id="CodQWY6BtfW7S0ok78mj70">阶段 3 完成后再粘</span></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- 站 5 -->
+  <div class="step" id="s5" data-page-node-id="SxpmfVG6XUx3K0c4jQxRxf">
+    <div class="stephead" data-page-node-id="0ZWtVfrPcwGwPGHlgnn46O"><span class="badge" data-page-node-id="r5zUvQQTztyK9wtLSvTDJ8">5</span><h3 data-page-node-id="OTEaYySt87llEsZd4BProN">阶段 5 · 验收 + 建索引</h3><span class="chip" data-page-node-id="vYK9ZW348uhhz3AkFDGlNi">5 分钟</span></div>
+    <p data-page-node-id="HUjeoLG7hDNgp9ytUDka5O">最后一段：让它清点卡片数量、用 4 个问题考你一遍（答不上来的地方它补问）、生成一张总索引 <b data-page-node-id="7ZNeDf52mHEuF1QVV4GlE9">00_索引.md</b>。</p>
+    <p data-page-node-id="8H6iGSVycElAqErHGtK3wv">完成后你的电脑上会多出这样一个文件夹——<b data-page-node-id="qFilzzaib74bHSfItfLaty">去文件夹里看一眼，文件数应该跟卡片数差不多</b>：</p>
+    <div class="tree" data-page-node-id="njvSVg6rlEpI3YlyLwAeTg">我的知识库/
+├── <span class="k" data-page-node-id="kesdhhTG3wlzbKe0ssFOZP">00_索引.md</span>          ← 总目录，系统先看这个
+└── 知识卡片/
+    ├── <span class="k" data-page-node-id="8Or7VJJvFB7xz4M8CsaA7l">A-定位卡</span>-我是谁.md
+    ├── <span class="k" data-page-node-id="gO2TDaXRmEshQr056tZ3i7">B-经历卡</span>-2019年第一次做短视频.md
+    ├── <span class="k" data-page-node-id="SNETY18bI8P0kzjXr3E16F">C-观点卡</span>-为什么努力赚不到钱.md
+    ├── <span class="k" data-page-node-id="YpJhEB2h9MCkk1RyXc1t7Y">D-证据卡</span>-我的客户从0到月入10万.md
+    └── <span class="k" data-page-node-id="FnFdMAPyVPqZzsTQHsDWBM">E-客户卡</span>-他们半夜在想什么.md</div>
+    <details data-page-node-id="WtKAnkjxEbXbX2KnhNjBTw">
+      <summary data-page-node-id="QXYzXGIq7ZdnRx1hn7Omkw">阶段 5 提示词 · 收尾</summary>
+      <div class="promptbox" data-page-node-id="cu8FSPjX2mL7BPnzKWjI8O">
+        <pre id="p5" data-page-node-id="a6hROWvfMbcvdVGKxP6rD2"></pre>
+        <div class="copyrow" data-page-node-id="DLrjKI4Axnj7JkbQI6n6ZD"><button class="copy" data-copy="p5" data-page-node-id="mMyFWUPHMqMOfDsQztnbLG">一键复制</button><span class="copynote" data-page-node-id="ukyasMEepmQCB7076CCnpI">阶段 4 完成后再粘</span></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- 站 6 -->
+  <div class="step" id="s6" data-page-node-id="2FOErDVvfmjcf50nsEmQfa">
+    <div class="stephead" data-page-node-id="JdmObrayPQL4LVuxnUKcGW"><span class="badge" data-page-node-id="7MSvBZDWTDqIdblLaCmnZS">6</span><h3 data-page-node-id="3MAdMLAsPad135XKjOGqaO">装系统</h3><span class="chip" data-page-node-id="Dkur4kvgIa5FNKJOLake9z">1 分钟</span></div>
+    <p data-page-node-id="mRdTEGOofaHoumCr0F1L2O">把给你的技能包（一个 <b data-page-node-id="FjO98GK8wphLmMVqYdR6TF">.zip</b> 文件）<b data-page-node-id="crIvy7FQVQaSBmwueSDkBv">直接拖进 WorkBuddy 的对话框</b>，然后说一句：</p>
+    <div class="promptbox" style="border:1px solid var(--line);border-radius:12px;margin:14px 0;" data-page-node-id="CVhjYO4y9pswGzAS6WMCFK">
+      <pre id="p6" data-page-node-id="oO18qr2541oO5pUtqVHkpT"></pre>
+      <div class="copyrow" data-page-node-id="zMVX928NN1ACGoYovECsU4"><button class="copy" data-copy="p6" data-page-node-id="i0b7nsWSAtjOpqnMprRIst">一键复制</button><span class="copynote" data-page-node-id="LHo8qPglO6YpinfbZ3AqvC">拖完 zip 后粘这句</span></div>
+    </div>
+    <p data-page-node-id="ljWBu1OgSDRd5fyQfSQ1fe">装完它会说「已安装」。如果问装到哪儿，回「默认位置就行」。</p>
+    <p data-page-node-id="Hb0bxCAxtAORS8VvLB9xuG">再把知识库位置告诉它一次：</p>
+    <details data-page-node-id="EHDJlYX4eFlkgqIyXK9TQ4">
+      <summary data-page-node-id="f1lpWQ2gwf4SJZqmH5yi0O">把知识库位置告诉它（说一次就够）</summary>
+      <div class="promptbox" data-page-node-id="g9YD7h7q5NZzxDtHkb9cgs">
+        <pre id="p7" data-page-node-id="pRCJ5X799BPzvgAzrHQYzf"></pre>
+        <div class="copyrow" data-page-node-id="cuTkcDQ3nmNMORaKGo5xse"><button class="copy" data-copy="p7" data-page-node-id="bN3YlJobwGRE054PPPwL8a">一键复制</button><span class="copynote" data-page-node-id="TiGhEp4KzBbUxpEOrj0DoG">把 [路径] 换成你定的那个文件夹</span></div>
+      </div>
+    </details>
+    <div class="callout" data-page-node-id="0uk2O0ISJ0B6Un4YYQRHvC">忘了这一步也没关系——系统现在会自己去找库，找没找到都会跟你说一声。<br data-page-node-id="yPf8at02ynOaW6jAAscml3">
+      <b data-page-node-id="amwL7SgGu6RLZzWAJTQya7">但反过来：它要是闷头就写、一句没提库，基本就是没接上。</b>这种稿子别用。</div>
+  </div>
+
+  <!-- 站 7 -->
+  <div class="step" id="s7" data-page-node-id="XXD86aq5OSRhyNov3dK1UE">
+    <div class="stephead" data-page-node-id="rpBR8H6Z1WqZEbc3d0dqdH"><span class="badge" data-page-node-id="sxz6PpoT0PYSM83APDNgLk">7</span><h3 data-page-node-id="ECSC8UlOj7Ie162bEGVwtV">跑第一条稿</h3><span class="chip" data-page-node-id="VZiHbETDSYrvx2qY9DnPdR">2 分钟</span></div>
+    <p data-page-node-id="RkvBU7uB4mhbgVfe4RDCyB">直接说人话，<b data-page-node-id="zZa4xezmm8EwS5f1ppsAos">不用背任何指令</b>：</p>
+    <div class="promptbox" style="border:1px solid var(--line);border-radius:12px;margin:14px 0;" data-page-node-id="1yrB6J0r4140yywEb7RRAF">
+      <pre id="p8" data-page-node-id="Th4g4FR1PpUF8zA1CIR6ls"></pre>
+      <div class="copyrow" data-page-node-id="z12T5hjW0uei27Fh0B4wgC"><button class="copy" data-copy="p8" data-page-node-id="mHtAnwk2D5mP83qRjBpvoD">一键复制</button><span class="copynote" data-page-node-id="GCkF5oRoY9cntQW0aXev7j">把 XX 换成你想讲的话题</span></div>
+    </div>
+    <p data-page-node-id="L2klVqoB319DAHLek6PVWX">它会自己去库里翻卡片、找你的经历和观点、配事实和图，最后给你一个能直接拍的交付包。</p>
+    <p data-page-node-id="FLiEbar1Gsgmg320MDoiHV"><b data-page-node-id="BgoMaEuqcX85Ed5q2gt0xC">拿到稿子先验证库接上了没</b>：翻一遍，看有没有只可能是你才说得出的细节（你的经历、你的数字、你的原话）。看着像谁都能写的通用稿，就追问一句：</p>
+    <div class="promptbox" style="border:1px solid var(--line);border-radius:12px;margin:14px 0;" data-page-node-id="GxiooFzHQakeueHHLLqBjB">
+      <pre id="p9" data-page-node-id="Zjg6RkLXRDEnllena5EDwB"></pre>
+      <div class="copyrow" data-page-node-id="fioSkMGZuMsamGU4A4pXRd"><button class="copy" data-copy="p9" data-page-node-id="ApPqMzfBoAvZfLjNtqjcqU">一键复制</button><span class="copynote" data-page-node-id="HoXX4ydYDkewLdGTipkyPl">答不上来 = 库没接上</span></div>
+    </div>
+  </div>
+
+  <!-- 站 8 -->
+  <div class="step" id="s8" data-page-node-id="gO8rqCWHdhKWLiHD1Dy63M">
+    <div class="stephead" data-page-node-id="nzPHxgJ4Pkvy3SrHHJPhLa"><span class="badge" data-page-node-id="PfgwgmuCG0shvbBG76ywBC">8</span><h3 data-page-node-id="S5HPsONefpVHT2XugV72NP">让库越用越值钱</h3><span class="chip" data-page-node-id="Ag4DllJHpqxl1BEwWdoWmL">长期</span></div>
+    <p data-page-node-id="k2BiCsSxBboVF4jGHw8mC8">库是活的。每拍完一条视频，把视频里新想到的东西补一张卡进去。</p>
+    <p data-page-node-id="Q7FXEYhB5AeW0HACyCHecM">三个月后再看，你会发现自己能讲的东西比现在多一倍——<b data-page-node-id="L7VEZxpJ2MCrLXSHagmqEb">这就是别人抄不走的东西</b>。</p>
+  </div>
+</section>
+
+<!-- ============ 自检 ============ -->
+<section id="check" data-page-node-id="j0rtGBlPqZstaaFNNx3jHK">
+  <div class="sechead" data-page-node-id="rtCiGXG9qy2lUnfNRQH5xP"><span class="secnum" data-page-node-id="UsSnCfaNMfpsx8OrbaFmqi">验收</span><h2 data-page-node-id="HJ5NuiJPR3YS1uMlHA48AE">库建得合不合格</h2></div>
+  <p class="secsub" data-page-node-id="Cq07t6y8i9oBjX4vItD5LG">装系统之前，用这 6 条自己考一遍。有任何一条答不上来，说明库还没建好，回去补。</p>
+  <table data-page-node-id="fDGM5O9wF8nstEZUEnt2S4">
+    <tr data-page-node-id="4OYSIEglzPwbdZu3YzAgFt"><th data-page-node-id="S43UZLTmf52DYivOALWo4s">#</th><th data-page-node-id="f4npUQ1tQvKr2f6stBEkJk">检查项</th><th data-page-node-id="Z8htcK67dGH7XODouPT5A8">及格线</th></tr>
+    <tr data-page-node-id="xMSQGR5qwsv39aHWMA3qdl"><td data-page-node-id="FZQ4HiETydDRFZ1VGS0HK3">1</td><td data-page-node-id="KGNvVh7WRr23l3NzVwGHe4">卡片总数</td><td data-page-node-id="zF1XCygjBXUzCG5xZw5a0F">≥ 20 张</td></tr>
+    <tr data-page-node-id="gj9syTKLY8PhcOwpsVH4yO"><td data-page-node-id="IC8mPukTgx2rLpGdAlpwFb">2</td><td data-page-node-id="tPbbPXrRSwmXiPxIEYe8SF">有没有数字</td><td data-page-node-id="WBAOnTkQDek0IJLDlVOWcL">至少 3 张卡带具体数字（收入 / 成本 / 周期 / 涨粉）</td></tr>
+    <tr data-page-node-id="IPqFtfk54Zewnp4joSIfRA"><td data-page-node-id="I2L2dQB5DSWtbefBrBxgVZ">3</td><td data-page-node-id="236pjWmlg8k804cZXE5x0h">有没有反共识</td><td data-page-node-id="Bl0hTd3fgMBCHbE3mFTg4t">至少 3 张「观点卡」是跟主流说法相反的</td></tr>
+    <tr data-page-node-id="odgGWpdHH8UCw4ygaFhc2e"><td data-page-node-id="WEabKXvxofWDQTFtuSzPNA">4</td><td data-page-node-id="5E9UtFqEju2bGdQRyraPsq">有没有客户原话</td><td data-page-node-id="Z7IlqCdbWyKGQD4ggbaWRE">至少 2 张「客户卡」里记了真实口语</td></tr>
+    <tr data-page-node-id="eVmlKpZEBfhlwTNAjgdcUS"><td data-page-node-id="BJNtowjb8nXgCgo6ozjTpg">5</td><td data-page-node-id="kzsTh16whISXaEqXnRBykl">能不能答出三句话</td><td data-page-node-id="ERuiv8k9oXp7LPiMeChDFD">别人问「你是干嘛的」，你能说出三句让人记住的话</td></tr>
+    <tr data-page-node-id="j39eTQGexDbSIHCMBRZ25M"><td data-page-node-id="QsuPzFp0JmTmezzP8spC3b">6</td><td data-page-node-id="bjp8ckLYwJt6LsDOgkEhYA"><b data-page-node-id="5MRWnXljuk56tTFldXC9RQ">卡片真的存成文件了吗</b></td><td data-page-node-id="FEQHYEYvgD7NrI0oOVpsj2"><b data-page-node-id="3sXHowwDeCnFTXAC1x3QBj">去你定的文件夹里看一眼，文件数 ≈ 卡片数。只有对话没文件 = 白做</b></td></tr>
+  </table>
+  <div class="callout" data-page-node-id="1ZEEiYLgsOTJJiaQcmZvJZ"><b data-page-node-id="DuqQeHFmkDfA2oEoJ80sbe">最后一条最要命。</b><br data-page-node-id="TEG817LIvW7OshzQp6BUKk">如果第 5 条答不出三句话，说明你的定位还是模糊的——这时候别急着写稿，先回去把阶段 0 和阶段 2 重做一遍。</div>
+</section>
+
+<!-- ============ 坑 ============ -->
+<section id="pits" data-page-node-id="nqpjZWtPOapvZn2cjbil5O">
+  <div class="sechead" data-page-node-id="Ja37DwGeRkeQd7PfefNTBI"><span class="secnum" data-page-node-id="41fxeqq8fA9oQAbix1ACvn">避坑</span><h2 data-page-node-id="VZepZI3RYqwxG0DGCyCZC8">8 个常见坑</h2></div>
+  <p class="secsub" data-page-node-id="raQiWLVqpk0QHhy8rd1gRT">这些都是别人真踩过的，看一遍能省两小时。</p>
+
+  <div class="pit" data-page-node-id="u7fsbEIAKfg7PYSiXC9bzQ"><h4 data-page-node-id="aufVGrySgt2uL3xrzT2In4"><span data-page-node-id="AVsen1ji9tGVMqXw1mBE47">01</span>想太多，说不出来</h4>
+    <p data-page-node-id="ywBBcQz9drQN0BgIZkBjcD">别打字，用语音。语音输入的时候你是在「说话」，说话比写字容易得多。说得啰嗦没关系，AI 会整理。</p></div>
+  <div class="pit" data-page-node-id="8wpGmX8psCsarIA2fM9SYQ"><h4 data-page-node-id="7npW4R5DNmxV1ig8vyzoEv"><span data-page-node-id="FOGEoI9TAV480hHEXmgecS">02</span>怕说错，什么都想美化</h4>
+    <p data-page-node-id="UFofW6ielLMSdqzKJBSTfh">千万别。知识库是给你自己用的，不是给外人看的，<b data-page-node-id="f7mq0lNHkUTaN0wEFKcPD2">越真实越好用</b>。吹过的牛最后会变成稿子里的空话，观众一眼看穿。</p></div>
+  <div class="pit" data-page-node-id="lm5jVMmTNO1SXEfJEACMbJ"><h4 data-page-node-id="856AVYgtTjTLOfKVUleDL4"><span data-page-node-id="SuDh1rl9JolL2AZWQCwP50">03</span>一次想做完</h4>
+    <p data-page-node-id="mxobEMTI3QE8ppDUk3OHnS">不用。分 3 天，每天 20 分钟，效果比一口气做完好。隔一天再想，往往能想起更多东西。</p></div>
+  <div class="pit" data-page-node-id="zGSbtiJ4u9TDF7o5PYbhMj"><h4 data-page-node-id="PWyPJXt7Pze7eNq6xzOJPl"><span data-page-node-id="Ma7NvOyW0ovaSP5qPW1oMN">04</span>数字记不准</h4>
+    <p data-page-node-id="kj4B2e8onJxukBcG9sIE2E">记不准就写「大概」「量级」「比之前翻了一倍」这种。<b data-page-node-id="n4cBY1zpgO3rGEYSPRHosD">编一个具体数字是最危险的</b>——你以后会把它写进稿子，被人问住就没法收场。</p></div>
+  <div class="pit" data-page-node-id="TCRRB7PvI5SZC5thW6Em4C"><h4 data-page-node-id="iDtbnBUrwhNjiTwLzSd36O"><span data-page-node-id="bm6YKlFi38pQxFlR8LW25H">05</span>做完就不管了</h4>
+    <p data-page-node-id="EuccDFSejgQiAmGjO5C7cV">每做完一条视频，把视频里新想到的东西补一张卡进去。库是活的，用一次长一次。</p></div>
+  <div class="pit" data-page-node-id="Smqu6dW8uGpCrqJcS4abVK"><h4 data-page-node-id="EOFLu9D0jHiDYQbN5SW1Fq"><span data-page-node-id="z1vfvBrEfFAwafsALPO3eA">06</span>没先定位置就开始说</h4>
+    <p data-page-node-id="C1kHy21HUhWXSISpkS8wKt">一定要让它在问第一轮问题之前，先问你「知识库放哪儿」。不然它会默认存到奇怪的地方，或者只存在对话里不落盘，后面系统读不到，等于白做。<br data-page-node-id="CTZwkRPic9S0mFrCiKYrfr">
+    补救：问它一句「刚才那些卡片存哪儿了？把路径告诉我」，答不上来就让它重新存一遍。</p></div>
+  <div class="pit" data-page-node-id="AbVy0qfWQRtAGDPZ2hGv9Y"><h4 data-page-node-id="9j2AiZE7vtVHrV1XOSHGd1"><span data-page-node-id="vrVmAIa23CcGqXwgpxdsH1">07</span>装完系统没说知识库在哪</h4>
+    <p data-page-node-id="yEdsBPjF0HhiZevxFiMFvm">系统装好不等于它能读你的料。不发那句位置，它不知道去哪儿翻，出来的稿子就是谁都能写的通用货——没有你的经历、没有你的数字。<br data-page-node-id="biGWnuCGGWZoGgoEbI1VIG">
+    判断方法很简单：看稿子里有没有<b data-page-node-id="bQeWLzEEKNS8R1aWd9SzCN">只可能是你才说得出的细节</b>。没有，就是没读到库。</p></div>
+  <div class="pit" data-page-node-id="SKCR7maEr0OmCeAVunBmLo"><h4 data-page-node-id="206WMB0QqACHW1ExiKHTOG"><span data-page-node-id="tWHcvFVVzz2UxpB3BRIrOm">08</span>中途换电脑 / 换应用</h4>
+    <p data-page-node-id="oFnM497VDdBxDbVXVudRuF">库是存在你这台电脑上的文件，换电脑要整个文件夹拷走。所以别在网页版 AI 里做一半再导过来——直接在 WorkBuddy 里一口气做完，最省事。</p></div>
+</section>
+
+<footer data-page-node-id="WfJU6Z7dwFu8NJYklbNJGw">
+  建库是地基 · 慢慢来，比较快<br data-page-node-id="QnHpkim2oFAjGGvgs9tB9p">
+  <span style="color:var(--gold)" data-page-node-id="mR74ZacuYTd8iGg4zKD0Bd">读万物之势，得万物之局</span>
+</footer>
+
+</div>
+
+<!-- ============ 提示词原文（不渲染） ============ -->
+<script type="text/plain" id="src-p0">
+你现在是我的「知识库搭建助手」，运行在 WorkBuddy 里。
+
+目标：帮我把我脑子里散着的东西，整理成 AI 以后能反复调用的知识卡片，并且**在我电脑上真的建成一个文件夹**，一卡一个文件。
+
+【开工第一件事：定位置】
+在开始问问题之前，先问我一句：
+「你的知识库想放在电脑的哪个位置？比如『桌面 / 我的知识库』。不确定的话，回我一句『你帮我选个地方』，我就在文档目录下建一个『我的知识库』文件夹。」
+
+我回答后，你把这个路径记牢，后面所有卡片都写进去。
+
+【你的工作规则】
+1. 一次只问我 3 个问题，问完就停，等我回答，不许一次问完
+2. 我怎么说的，你就怎么记，不要替我美化、不要替我升华、不要用书面语改写
+3. 我回答完一轮，你把内容整理成卡片给我看，问我「这样记对吗？」
+4. 我确认后，你**立刻把这张卡写成文件**存进上面定好的路径，然后告诉我「已保存：xxx.md」，再问下一轮
+5. 每张卡一个独立 .md 文件，文件名用卡片标题，格式如「A-定位卡-我是谁.md」
+6. 全程说人话，别用专业词
+
+【卡片格式】
+每张卡长这样，用 markdown：
+
+# [卡片标题]
+
+**一句话**：（这张卡最核心的一句话，20 字以内）
+
+**详细内容**：（我说的原话，整理通顺但不改动意思）
+
+**能用在哪**：（这条内容适合讲给谁听、在什么场合用）
+
+**金句**：（如果我的话里有特别适合当标题或者收尾的一句，单独拎出来）
+
+---
+
+【现在开始：阶段 0 · 我是谁】
+
+先问我知识库放哪儿（见上面「开工第一件事」），我回答完位置后，你再问第一轮这 3 个问题：
+
+1. 你现在主要在做什么？（做什么生意/什么工作，靠什么赚钱）
+2. 你的客户是谁？（什么人给你钱，越具体越好）
+3. 你想让谁在短视频上看到你？（看到之后，你希望他觉得你是什么人）
+
+问完等我回答。
+
+【我答完之后，你多做一件事】
+根据我这 3 个答案，帮我生成一张「热点边界卡」，存成 `热点边界.md` 放在我的知识库根目录，格式就三行：
+
+**白名单**：3-6 个我讲得出口、讲了有说服力的题材（从我的行业和我的观众推出来）
+**黑名单**：明确不碰的（通用的是才艺 / 奇观 / 娱乐 / 八卦 / 猎奇，另外加上我自己说绝对不讲什么）
+**判定一句话**：以后看到一条热点，用这一句话就能秒判该不该跟
+
+生成完念给我听，我确认或者改。
+
+**这张卡决定系统以后给我追什么热点**——不是全网热搜，是我行业里、我观众真正关心的。
+</script>
+
+<script type="text/plain" id="src-p1">
+很好，进入【阶段 1 · 挖经历】。
+
+这一步的目的：把你做过的事挖出来。你做过的每一件事，都是你「有资格讲」的证据。观众不关心你懂什么理论，只关心你做过什么。
+
+【提问规则不变】：一次 3 个问题，问完等我答，答完整理成卡片。
+
+请从下面这些方向里挑着问，一轮 3 个，问完接着问下一轮，直到我们攒够 8 张以上「经历卡」，或者我喊停：
+
+方向参考（你自由组合，别照着念）：
+- 你是哪一年开始做现在这行的？之前在干什么？
+- 从入行到现在，换过几个阶段？每个阶段靠什么赚钱？
+- 第一个客户/第一笔钱是怎么来的？
+- 有没有一次特别难、差点没挺过去的时候？后来怎么过来的？
+- 有没有做过一个决定，事后回头看是对的？
+- 有没有踩过一个坑，现在想起来还心疼？
+- 你做过的、最拿得出手的一件事是什么？
+- 你觉得自己比同行强在哪一点？（要具体，要能举例子）
+- 有没有什么技能，是你花了很久才练出来的？
+- 别人经常夸你什么？经常找你帮什么忙？
+
+【卡片格式】
+# B-经历卡-[这件事的核心]
+
+**时间**：（哪一年，或者大约什么时候）
+**发生了什么**：（我说的原话整理）
+**结果/数字**：（有数字就写数字，没数字就不写，别编）
+**这件事证明了我什么**：（一句话）
+**能用在哪**：（适合讲给谁听）
+
+现在开始，问第一轮。
+</script>
+
+<script type="text/plain" id="src-p2">
+进入【阶段 2 · 挖观点】。
+
+这一步的目的：把你的「判断」挖出来。经历证明你有资格讲，观点决定你讲的东西有没有人听。观点不是知识（知识网上都有），观点是「你怎么看这件事」——同一个事实，你的解读跟别人不一样。
+
+【提问规则不变】：一次 3 个问题，答完整理成卡片。
+
+重点挖三类：
+
+类型一 · 你信什么
+- 你这行里，有哪些话是你深信不疑的？
+- 如果只能给新人一句忠告，你会说什么？
+- 你做决定时，最后守的那条底线是什么？
+
+类型二 · 你烦什么（这类最值钱，最容易火）
+- 同行都在说、但你觉得是扯淡的一句话是什么？
+- 有没有一种流行做法，你一看就知道要出问题？
+- 客户经常问你一个问题，问得你心里翻白眼，因为前提就错了？
+
+类型三 · 你改过什么看法
+- 有没有一件事，你以前确信，后来被打脸了？
+- 三年前你觉得重要的东西，现在还觉得重要吗？
+
+【卡片格式】
+# C-观点卡-[这句话的核心]
+
+**我的观点**：（一句话，越短越好，要敢说，别和稀泥）
+**为什么我这么想**：（我说的原话整理，要有具体理由）
+**举个我见过的例子**：（自己的经历或客户的例子，有数字最好）
+**大多数人怎么看（反面）**：（大众/同行的常见看法，用来做对比）
+**能用在哪**：（这条适合讲给谁听）
+**可视化**：（这个观点如果画成一张图，图上该出现哪 3-5 个关键词、它们之间是什么关系——并列？因果？对比？反差？系统出稿时会照这个画思维导图，贴在视频中间）
+
+一直问到我喊停，或者攒够 8 张。现在开始第一轮。
+</script>
+
+<script type="text/plain" id="src-p3">
+进入【阶段 3 · 挖证据】。
+
+这一步的目的：把「说法」变成「数字和故事」。短视频上最不缺的就是观点，缺的是「凭什么信你」。每一个数字、每一个具体的故事，都是别人抄不走的护城河。
+
+【提问规则不变】：一次 3 个问题，答完整理成卡片。
+
+重点挖这些：
+
+数字类：
+- 你这行里，有哪些关键数字是外行不知道的？（成本、毛利、转化率、周期、客单价）
+- 一个客户从认识到成交，一般要多久？花多少钱？
+- 你自己或者你的客户，最好的成绩是多少？（收入、涨粉、订单、效率）
+- 最差的时候呢？亏了多少/走了多少弯路？
+- 一件事，外行以为要多久，实际上要多久？
+
+故事类：
+- 有没有一个客户，前后变化特别大？从前什么样，后来什么样？
+- 有没有一次你劝住了客户别干某事，后来看是对的？
+- 有没有一个细节，只有内行才知道？
+- 你见过最典型的失败案例是什么？他错在哪一步？
+
+【卡片格式】
+# D-证据卡-[这个数字或故事]
+
+**事实**：（具体发生了什么，什么时间，谁）
+**数字**：（能写数字就写数字，写不出来的写「量级」，比如「六位数」——但绝不能编）
+**这个证据能证明什么观点**：（一句话）
+**用的时候要注意**：（有没有什么不能说的、需要打码的、敏感的）
+**能用在哪**
+
+一直问到我喊停，或者攒够 6 张。现在开始第一轮。
+</script>
+
+<script type="text/plain" id="src-p4">
+进入【阶段 4 · 挖客户】。
+
+这一步的目的：搞清楚你的客户「卡在哪」。很多人做内容做不起来，不是写得不好，是写的是自己想说的，不是客户想听的。这一步做完，你就知道该写什么了。
+
+【提问规则不变】：一次 3 个问题，答完整理成卡片。
+
+重点挖这些：
+- 客户找到你的时候，一般是什么状态？（刚起步？卡了很久？踩过坑？）
+- 他们最常问你的问题是什么？（原话是什么，越啰嗦越真实）
+- 他们最怕什么？（怕亏钱？怕丢人？怕家人说？怕坚持不下去？）
+- 他们最想要什么？（说出来想要 vs 实际想要，这俩经常不一样）
+- 有没有一种错误想法，几乎每个新客户都有？
+- 他们半夜睡不着在想什么？
+- 什么样的人你不想服务？（这个很重要，能帮你筛掉无效流量）
+- 客户成交前后，最常用的一个词是什么？（他们的语言，不是你的）
+
+【卡片格式】
+# E-客户卡-[他们的一类状态或问题]
+
+**客户是谁**：（越具体越好）
+**他们卡在哪**：（一句话）
+**他们的原话**：（他们自己怎么说的，保留口语）
+**他们不知道但应该知道的**：（认知盲区，这就是你的内容机会）
+**我该怎么回应**：（一句话方向）
+**能用在哪**
+
+一直问到我喊停，或者攒够 4 张。现在开始第一轮。
+</script>
+
+<script type="text/plain" id="src-p5">
+进入【阶段 5 · 收尾】。
+
+请帮我做 3 件事：
+
+第一件：清点
+数一下我们现在一共做了几张卡，按 A/B/C/D/E 五类分别列出标题清单。
+
+第二件：验收
+用下面 4 个问题考我一遍，我答不上来的，说明那部分还缺，你补问：
+1. 你最想让观众记住你的三句话是什么？
+2. 你最拿得出手的两个数字或两个故事是什么？
+3. 你的客户最常卡在哪个地方？
+4. 有一条你特别想讲、但别人不敢讲的观点是什么？
+
+第三件：建索引
+帮我生成一个「00_索引.md」，格式如下，把每张卡的标题、一句话摘要、适用场景填进去：
+
+# 我的知识库 · 总索引
+
+## 一句话定位
+（阶段 0 那张卡的一句话）
+
+## 卡片清单
+### A · 我是谁（共 X 张）
+| 卡片 | 一句话 | 适合讲给谁 |
+|---|---|---|
+| xxx | xxx | xxx |
+
+### B · 我做过什么（共 X 张）
+...
+
+### C · 我怎么看（共 X 张）
+...
+
+### D · 我的证据（共 X 张）
+...
+
+### E · 我的客户（共 X 张）
+...
+
+## 三类高频选题方向
+（根据上面所有卡片，帮我提炼 3 个「我最该讲、也最有人听」的方向，每个方向配 5 个具体选题）
+
+## 我绝对不讲的东西
+（我在整个过程中提到过的：不想讲的、不能讲的、讲了不舒服的）
+
+---
+
+做完之后告诉我：
+「你的知识库建好了，一共 X 张卡，存在 [路径]。现在可以装口播稿生成系统了。」
+
+【最后提醒一句】
+生成「00_索引.md」的时候，也要真的写成文件，存到知识库的根目录下。
+</script>
+
+<script type="text/plain" id="src-p6">帮我安装这个技能</script>
+
+<script type="text/plain" id="src-p7">我的知识库在 [这里填你刚才定的路径]，以后写东西先去这个库里找料</script>
+
+<script type="text/plain" id="src-p8">用热点炼稿，帮我写一条关于「为什么越努力越赚不到钱」的 1 分钟口播稿</script>
+
+<script type="text/plain" id="src-p9">你读了我知识库里的卡片吗？读了哪几张？</script>
+
+<script>
+// 把原文注入 pre
+for (var i = 0; i <= 9; i++) {
+  var src = document.getElementById('src-p' + i);
+  var dst = document.getElementById('p' + i);
+  if (src && dst) dst.textContent = src.textContent.replace(/^\n/, '').replace(/\s+$/, '');
+}
+
+// 一键复制：clipboard 优先 + execCommand 兜底（本地 file:// 打开也能用）
+document.querySelectorAll('button.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = document.getElementById(btn.dataset.copy).textContent;
+    var ok = function () {
+      var old = btn.textContent;
+      btn.textContent = '已复制 ✓';
+      btn.classList.add('done');
+      setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(ok, function () { fallback(text, ok); });
+    } else {
+      fallback(text, ok);
+    }
+  });
+});
+function fallback(text, cb) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); cb(); } catch (e) { alert('复制失败，请手动选中文本复制'); }
+  document.body.removeChild(ta);
+}
+
+// 路线图站点跳转
+function go(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+</body>
+</html>
