@@ -1,0 +1,4 @@
+interface:
+  display_name: "炼石成金 · 公开版"
+  short_description: "把一项真实能力整理为最小产品候选，明确结果、验收与验证动作"
+  default_prompt: "请使用 $stone-to-gold，根据我提供的材料完成一个小任务，明确未知与待验证项。"
