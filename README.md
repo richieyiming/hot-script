@@ -2,14 +2,9 @@
 
 原名：热点炼稿；英文 ID 与仓库地址不变。
 
-## 炼金师系列与新版入口（2026-10-01）
+## 独立下载
 
-- [5个独立炼金师公开技能](alchemy-skills/README.md)，优先体验灵感炼金师。
-- [热点炼金师最新入口](SKILL.md)：新增个人资产匹配、已选/已做/已发布去重与商业回流。
-- [小红炼金师](https://github.com/richieyiming/xhs-huokebao)：平台对标验证与需求/供给匹配。
-
-使用最新版请以main中的目录文件为准；历史hot-script-v2.0.0.zip仅为旧版归档，不包含此次系列与升级。
-
+[下载热点炼金师 ZIP](https://github.com/richieyiming/hot-script/raw/refs/heads/main/downloads/hot-script.zip)。本分支只含热点炼金师，其他技能在独立发布分支。
 
 把行业热点、真实事件和用户自己的知识经验，转化成有明确观点、可以直接录制的短视频口播稿。
 
@@ -38,7 +33,7 @@
 
 ## 安装方法
 
-1. 下载 `hot-script-v2.0.0.zip`。
+1. [下载最新热点炼金师 ZIP](https://github.com/richieyiming/hot-script/raw/refs/heads/main/downloads/hot-script.zip)。
 2. 在支持导入 Skill 的 AI 工具中上传或导入该压缩包。
 3. 安装完成后发送：
 
@@ -95,3 +90,15 @@ hot-script/
 ## 许可证
 
 当前仓库以根目录中的 `LICENSE` 为准。
+
+## 独立技能下载
+
+| 技能 | 单独 ZIP | 源文件 |
+|---|---|---|
+| 企业 AI 炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/enterprise-alchemist/downloads/enterprise-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/enterprise-alchemist) |
+| IP 炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/ip-alchemist/downloads/ip-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/ip-alchemist) |
+| 炼石成金 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/stone-to-gold/downloads/stone-to-gold.zip) | [查看](https://github.com/richieyiming/hot-script/tree/stone-to-gold) |
+| 灵感炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/inspiration-alchemist/downloads/inspiration-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/inspiration-alchemist) |
+| 技能炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/skill-alchemist/downloads/skill-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/skill-alchemist) |
+| 热点炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/main/downloads/hot-script.zip) | [查看](https://github.com/richieyiming/hot-script/tree/main) |
+| 小红炼金师 | [下载](https://github.com/richieyiming/xhs-huokebao/raw/refs/heads/main/downloads/xhs-huokebao.zip) | [查看](https://github.com/richieyiming/xhs-huokebao/tree/main) |
