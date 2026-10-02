@@ -1,4 +1,4 @@
 interface:
-  display_name: "热点炼金师"
-  short_description: "结合行业热点与用户真实知识经验，创作可直接录制的口播和获客内容"
-  default_prompt: "请使用 $hot-script，把我提供的热点和真实观点写成一条口播。"
+  display_name: "IP炼金师 · 公开版"
+  short_description: "从真实经历或访谈采矿一张IP资产卡，并匹配一个可服务的人群问题"
+  default_prompt: "请使用 $ip-alchemist，根据我提供的材料完成一个小任务，明确未知与待验证项。"
