@@ -6,7 +6,7 @@
 |---|---|---|
 | 灵感炼金师 | 一段真实片段→观点、自然正文与事件卡 | [inspiration-alchemist](inspiration-alchemist/SKILL.md) |
 | 技能炼金师 | 一个需求/方法→可执行Prompt或Skill与验收记录 | [skill-alchemist](skill-alchemist/SKILL.md) |
-| 企业炼金师 | 一个企业问题→四层初诊清单、缺口与验证草案 | [enterprise-alchemist](enterprise-alchemist/SKILL.md) |
+| 企业 AI 炼金师 | 一个企业问题→四层初诊清单、缺口与验证草案 | [enterprise-alchemist](enterprise-alchemist/SKILL.md) |
 | IP炼金师 | 一段经历/访谈→一张可追溯资产卡与需求匹配 | [ip-alchemist](ip-alchemist/SKILL.md) |
 | 炼石成金 | 一项能力→一个最小产品候选与验证动作 | [stone-to-gold](stone-to-gold/SKILL.md) |
 
