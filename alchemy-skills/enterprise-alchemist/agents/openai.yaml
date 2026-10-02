@@ -1,4 +1,0 @@
-interface:
-  display_name: "企业 AI 炼金师 · 公开版"
-  short_description: "用四层清单梳理一个企业AI问题，得到证据缺口与可审阅的验证草案"
-  default_prompt: "请使用 $enterprise-alchemist，根据我提供的材料完成一个小任务，明确未知与待验证项。"

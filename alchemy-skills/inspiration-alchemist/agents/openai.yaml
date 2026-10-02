@@ -1,4 +1,0 @@
-interface:
-  display_name: "灵感炼金师 · 公开版"
-  short_description: "从真实经历中提炼一个观点，写成自然内容并附可复制事件资产卡"
-  default_prompt: "请使用 $inspiration-alchemist，根据我提供的材料完成一个小任务，明确未知与待验证项。"
