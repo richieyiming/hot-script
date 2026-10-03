@@ -1,104 +1,45 @@
-# 热点炼金师
+# 一铭的世界 Skill
 
-原名：热点炼稿；英文 ID 与仓库地址不变。
+黄一铭专属的认知训练、灵感捕捉、个人知识沉淀与内容孵化 Skill。
 
-## 独立下载
+## 核心定位
 
-[下载热点炼金师 ZIP](https://github.com/richieyiming/hot-script/raw/refs/heads/main/downloads/hot-script.zip)。本分支只含热点炼金师，其他技能在独立发布分支。
+**AI × 自媒体·炼金师**
 
-把行业热点、真实事件和用户自己的知识经验，转化成有明确观点、可以直接录制的短视频口播稿。
+## 它不是什么
 
-## 适合谁
+- 不是李尚龙仿写器
+- 不是收到一句灵感就自动写稿的机器
+- 不是把所有题材强行改成AI内容的工具
 
-- 创始人和个人 IP
-- 需要持续寻找内容选题的人
-- 需要把热点转化为行业观点的人
-- 需要改写口播稿、标题和发布文案的人
+## 它做什么
 
-## 能做什么
+把即时感悟、灵感、疑问、经历、客户故事、AI使用体感和时代观察先保存为“内容原矿”，再通过追问、连接、二阶推演、反证和人话表达，逐步形成黄一铭自己的判断、选题与内容资产。
 
-- 寻找与用户行业相关的近期热点
-- 判断一个热点是否值得跟
-- 把真实事件与用户观点结合成口播稿
-- 分析爆款的钩子和结构，再用用户自己的内容重新创作
-- 生成标题、话题标签、发布文案和承接话术
-- 对外部事实进行核实并附来源
-- 对广告、收益、医疗健康、教育、金融等内容进行基础合规检查
+## 九种模式
 
-## 安装前准备
+1. 记录
+2. 追问我
+3. 穿透
+4. 连接
+5. 反驳我
+6. 说人话
+7. 选题
+8. 成稿
+9. 复盘
 
-打开 `setup-guide.html`，或者填写 `templates/profile-template.md`，准备自己的行业、目标观众、产品或服务、真实经历、表达风格及隐私边界。
+## 与其他 Skill 的关系
 
-不要填写密码、验证码、身份证信息、银行卡信息、API Key、Cookie、客户隐私或未公开合同。
+- **一铭的世界**：上游个人母体，负责原矿、认知和个人知识库
+- **热点炼金师**：连接外部热点，把一铭已有判断与现实事件连接起来
+- **IP炼金师**：把真实经历、认知变化与人格细节提纯成长期IP资产
 
-## 安装方法
+最终形成：
 
-1. [下载最新热点炼金师 ZIP](https://github.com/richieyiming/hot-script/raw/refs/heads/main/downloads/hot-script.zip)。
-2. 在支持导入 Skill 的 AI 工具中上传或导入该压缩包。
-3. 安装完成后发送：
+`生活/实践 → 一铭的世界 → 热点/IP炼金师 → 内容发布 → 数据与新经历 → 一铭的世界`
 
-> 请使用热点炼金师 Skill。先告诉我需要提供哪些账号资料，不要假设我的身份和经历。
+## 核心原则
 
-如果工具中已经存在同名的 `hot-script`，请先备份原来的安装包和个人知识资料，再移除旧版并导入新版。不同工具对同名 Skill 的覆盖方式可能不同。
+> AI越懂你，越不能替你活、替你判断、替你成为你。
 
-## 安装包内容
-
-```text
-hot-script/
-├── SKILL.md
-├── setup-guide.html
-├── references/
-│   └── compliance.md
-└── templates/
-    └── profile-template.md
-```
-
-- `SKILL.md`：核心工作流程和输出规则
-- `references/compliance.md`：平台及广告表达合规参考
-- `templates/profile-template.md`：用户自己的账号资料模板
-- `setup-guide.html`：知识库准备引导
-
-## 公开版与私人资料
-
-本仓库只提供公开通用版，不包含作者的个人知识库、私人经历、账号内部策略、客户资料或商业运营数据。
-
-每位用户应建立并保管自己的账号资料。公开分享或反馈问题前，请先删除其中的个人信息和客户隐私。
-
-## 最小使用示例
-
-```text
-帮我找3个最近适合我行业的热点。先说明每个热点与目标用户的连接点，不合适的不要硬蹭。
-```
-
-```text
-这是我写的一段口播稿。保留核心观点，帮我改得更自然、更适合直接录制，不要编造我的经历。
-```
-
-```text
-分析这条爆款为什么有效，然后使用我的真实观点重新创作，不要逐句仿写。
-```
-
-## v2.0.0
-
-- 重做公开通用版 `SKILL.md`
-- 移除个人知识库、本地电脑路径和内部方法依赖
-- 新增账号资料空白模板
-- 统一合规资料路径
-- 修复安装包缺少引用文件的问题
-- 清理 macOS 隐藏文件
-
-## 许可证
-
-当前仓库以根目录中的 `LICENSE` 为准。
-
-## 独立技能下载
-
-| 技能 | 单独 ZIP | 源文件 |
-|---|---|---|
-| 企业 AI 炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/enterprise-alchemist/downloads/enterprise-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/enterprise-alchemist) |
-| IP 炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/ip-alchemist/downloads/ip-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/ip-alchemist) |
-| 炼石成金 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/stone-to-gold/downloads/stone-to-gold.zip) | [查看](https://github.com/richieyiming/hot-script/tree/stone-to-gold) |
-| 灵感炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/inspiration-alchemist/downloads/inspiration-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/inspiration-alchemist) |
-| 技能炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/skill-alchemist/downloads/skill-alchemist.zip) | [查看](https://github.com/richieyiming/hot-script/tree/skill-alchemist) |
-| 热点炼金师 | [下载](https://github.com/richieyiming/hot-script/raw/refs/heads/main/downloads/hot-script.zip) | [查看](https://github.com/richieyiming/hot-script/tree/main) |
-| 小红炼金师 | [下载](https://github.com/richieyiming/xhs-huokebao/raw/refs/heads/main/downloads/xhs-huokebao.zip) | [查看](https://github.com/richieyiming/xhs-huokebao/tree/main) |
+《一铭的世界》的最终目的不是自动化一铭，而是不断放大一铭。
